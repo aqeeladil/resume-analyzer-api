@@ -4,7 +4,7 @@ For the video demo, [click here](https://www.awesomescreenshot.com/video/3839263
 
 ```bash
 # Prerequisites
-pip install django djangorestframework djangorestframework-simplejwt pymupdf django-cors-headers requests django-environ
+pip install django djangorestframework djangorestframework-simplejwt pymupdf django-cors-headers requests django-environ gunicorn
 
 # Project Setup
 django-admin startproject resume_analyzer

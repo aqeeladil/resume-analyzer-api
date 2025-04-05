@@ -27,6 +27,8 @@ environ.Env.read_env()  # Reading .env file
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = env("SECRET_KEY")
 
+
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env.bool("DEBUG", default=True)
 
@@ -164,6 +166,7 @@ REST_FRAMEWORK = {
 
 # DeepSeek API Configuration
 DEEPSEEK_API_KEY = env("DEEPSEEK_API_KEY")
+
 
 DEEPSEEK_API_URL = "https://api.deepseek.com/v1/chat/completions"
 

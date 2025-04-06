@@ -28,10 +28,14 @@ environ.Env.read_env()  # Reading .env file
 SECRET_KEY = env("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = env.bool("DEBUG", default=True)
+DEBUG = env.bool("DEBUG")
 
 # ALLOWED_HOSTS = env.list("ALLOWED_HOSTS", default=[])
-ALLOWED_HOSTS = env.list("ALLOWED_HOSTS", default=[])
+if DEBUG:
+    ALLOWED_HOSTS = ['*']
+else:
+    ALLOWED_HOSTS = env.list("ALLOWED_HOSTS")
+
 
 # Application definition
 
@@ -150,15 +154,12 @@ AUTH_USER_MODEL = "api.CustomUser"
 # CORS_ALLOWED_ORIGINS = config("CORS_ALLOWED_ORIGINS", cast=Csv())
 # CORS_ALLOWED_ORIGINS = env.list("CORS_ALLOWED_ORIGINS", default=[])
 
-CORS_ALLOW_CREDENTIALS = True
-
 if DEBUG:
     CORS_ALLOW_ALL_ORIGINS = True
 else:
-    CORS_ALLOWED_ORIGINS = [
-        "https://aqeeladil.site",
-        "https://www.aqeeldil.site",
-    ]
+    CORS_ALLOWED_ORIGINS = env.list("CORS_ALLOWED_ORIGINS", default=[])
+
+CORS_ALLOW_CREDENTIALS = True
 
 
 REST_FRAMEWORK = {

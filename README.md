@@ -1,6 +1,6 @@
 # Resume Analyzer API
 
-For the video demo, [click here](https://www.awesomescreenshot.com/video/38392630?key=0c1a192ab8326edbaa3d2b9fc60584c9).
+For the video demo, [click here](https://www.awesomescreenshot.com/video/38436796?key=f0b540f8416dc4089e47a568b2f90c15).
 
 ```bash
 # Prerequisites
